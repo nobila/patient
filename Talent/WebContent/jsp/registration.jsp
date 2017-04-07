@@ -9,58 +9,52 @@
 <script src="/Etourism/js/validation.js"></script>
 <script src="/Etourism/bootfiles/jquery-3.1.1.min.js"></script>  
 
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
 var c=0;
-function blink() {
-	if(c==0)
-    	document.getElementById("h1").style.color="green";
-	else
-		document.getElementById("h1").style.color="aqua";
-	c++;
-	if(c>1)
-		c=0;
-	setTimeout("blink()",1000);
-	
-}
 
 
 function main()
 {
-	var userid=document.getElementById("txtuserid").value;
-	var userpass=document.getElementById("txtuserpass").value;
 	var username=document.getElementById("txtusername").value;
+	var userlastname=document.getElementById("txtuserl").value;
+	var userage=document.getElementById("txtuserage").value;
+	var userdob=document.getElementById("txtuserdob").value;
 	var useremail=document.getElementById("txtuseremail").value;
-	var userphno=document.getElementById("txtuserphno").value;
-    var city=document.getElementById("comboboxcity").value;
+    var userph=document.getElementById("txtuserph").value;
+      var gender=document.getElementById("rdos").value;
 	// alert(userid+userpass);
-if(checkEmpty(userid)==false)
+if(checkEmpty(username)==false)
 	{
-	//alert("userid needed");
-	document.getElementById("msgid").innerHTML="user id needed";
-	document.getElementById("txtuserid").focus();
+	//alert("First-name needed");
+	document.getElementById("msgid").innerHTML="First-name needed";
+	document.getElementById("txtusername").focus();
 	return false;
 	}
-if(checkEmpty(userpass)==false)
+if(checkEmpty(userlastname)==false)
 {
 //alert("userpass needed");
-	document.getElementById("msgid").innerHTML="user pass needed";
-document.getElementById("txtuserpass").focus();
-return false;
-}
-if(checkLength(userpass,8)==false)
-{
-document.getElementById("msgid").innerHTML="user pass less than 8 chars";
-document.getElementById("txtuserpass").focus();
+	document.getElementById("msgid").innerHTML="Last-name needed";
+document.getElementById("txtuserl").focus();
 return false;
 }
 
-if(checkEmpty(username)==false)
+
+if(checkEmpty(userage)==false)
 {
 //alert("userpass needed");
-	document.getElementById("msgid").innerHTML="user name needed";
-document.getElementById("txtusername").focus();
+	document.getElementById("msgid").innerHTML="Patient-age needed";
+document.getElementById("txtuserage").focus();
 return false;
 }
+
+if(checkEmpty(userdob)==false)
+{
+//alert("userpass needed");
+	document.getElementById("msgid").innerHTML="Patient-DOB needed";
+document.getElementById("txtuserdob").focus();
+return false;
+}
+
 if(checkEmpty(useremail)==false)
 {
 //alert("userpass needed");
@@ -68,29 +62,21 @@ if(checkEmpty(useremail)==false)
 document.getElementById("txtuseremail").focus();
 return false;
 }
-if(checkEmpty(userphno)==false)
+if(checkEmpty(userph)==false)
 {
 //alert("userpass needed");
 	document.getElementById("msgid").innerHTML="user ph no. needed";
-document.getElementById("txtuserphno").focus();
+document.getElementById("txtuserph").focus();
 return false;
 }
-if(checkLength(userphno,10)==false)
+if(checkLength(userph,10)==false)
 {
 document.getElementById("msgid").innerHTML="user ph no. less than 10 digits";
-document.getElementById("txtuserphno").focus();
+document.getElementById("txtuserph").focus();
 return false;
 }
 
-var chkarr=document.getElementsByName("chkhobby");
-//alert(chkarr);
-if(checkCtrl(chkarr)==false)
-{
-	document.getElementById("msgid").innerHTML="Select atleast 1 hobby!!";
-//	document.getElementById("chkhobby").focus();
-	return false;
-	
-	}
+
 var chkar=document.getElementsByName("rdos");
 
 if(checkCtrl(chkar)==false)
@@ -102,46 +88,13 @@ if(checkCtrl(chkar)==false)
 	}
 
 
-if(checkCombo(city)==false)
-{
-document.getElementById("msgid").innerHTML="Select a valid city!!";
-document.getElementById("comboboxcity").focus();
-return false;
-}
+
 
  return true;
 	}
-	</script> -->
-	
-	<!-- <script>
+	</script> 
 	
 	
- 	  $(document).ready(function() //AJAX-CODE TO CHECK IF USER-ID ALREADY EXISTS	
-			
-	{
-		$("#txtuserid").blur(
-		function(){
-			
-			var ui=this.value;
-			//alert(ui);
-			$.get("/Etourism/registration",
-			{
-				userid:ui
-			},
-			function(data,status)
-			{
-				$("#divmsg").html(data);
-				$("#divmsg").show();
-				//$("#divmsg").html(data);
-				
-			});
-			
-			});
-		
-		
-		});
-	
-</script>  -->
 
 </head>
 <body style="margin: 0px" onload="blink()">
